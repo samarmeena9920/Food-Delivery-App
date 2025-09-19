@@ -1,6 +1,6 @@
 # Food Delivery App
 
-Thias is a full-stack food delivery application with separate admin and user interfaces. It allows users to browse food items, add them to cart, place orders, and track their orders. Admins can manage food items and view all orders.
+This is a full-stack food delivery application with separate admin and user interfaces. It allows users to browse food items, add them to cart, place orders, and track their orders. Admins can manage food items , change order status and view all orders.
 
 ## Project Access
 
