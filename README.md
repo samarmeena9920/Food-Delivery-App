@@ -8,7 +8,7 @@ You can explore the different parts of the project at the following links:
 
 - **Frontend:** [Food Delivery App Frontend](https://food-delivery-app-frontend-196z.onrender.com)  
 - **Admin Panel:** [Food Delivery App Admin](https://food-delivery-app-admin-tar4.onrender.com)  
-- **Backend API:** [Food Delivery App Backend](https://food-delivery-app-backend-nu1i.onrender.com)  
+- **Backend API:** [Food Delivery App Backend](https://food-delivery-app-backend-066k.onrender.com)  
 
 ## Project Structure
 
