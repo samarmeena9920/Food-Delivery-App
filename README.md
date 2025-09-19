@@ -1,11 +1,19 @@
-# Susangat Food Order
+# Food Delivery App
 
-Susangat Food Order is a full-stack food delivery application with separate admin and user interfaces. It allows users to browse food items, add them to cart, place orders, and track their orders. Admins can manage food items and view all orders.
+Thias is a full-stack food delivery application with separate admin and user interfaces. It allows users to browse food items, add them to cart, place orders, and track their orders. Admins can manage food items and view all orders.
+
+## Project Access
+
+You can explore the different parts of the project at the following links:
+
+- **Frontend:** [Food Delivery App Frontend](https://food-delivery-app-frontend-196z.onrender.com)  
+- **Admin Panel:** [Food Delivery App Admin](https://food-delivery-app-admin-tar4.onrender.com)  
+- **Backend API:** [Food Delivery App Backend](https://food-delivery-app-backend-nu1i.onrender.com)  
 
 ## Project Structure
 
 ```
-Susangat-Food-Order-main/
+Food-Delivery-App-main/
   admin/      # Admin dashboard (React + Vite)
   backend/    # Backend API (Node.js + Express + MongoDB)
   frontend/   # User-facing frontend (React + Vite)
@@ -89,11 +97,12 @@ cd Food-Delivery-App-main
 
 See [`backend/.env.example`](backend/.env.example) for required environment variables.
 
-## Usage
+## Usage (Localhost)
 
-- Access the user frontend at `http://localhost:5173`
-- Access the admin dashboard at `http://localhost:5174`
-- Backend API runs at `http://localhost:4000`
+- **User Frontend:** Access the application at [http://localhost:5173](http://localhost:5173)  
+- **Admin Dashboard:** Access the dashboard at [http://localhost:5174](http://localhost:5174)  
+- **Backend API:** Runs at [http://localhost:4000](http://localhost:4000)  
+
 
 ## Technologies Used
 
