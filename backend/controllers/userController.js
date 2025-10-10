@@ -82,7 +82,7 @@ const registerUser = async (req, res) => {
             name: name,
             email: email,
             password: hashedPassword,
-            role: role || "user", // Use provided role or default to "user"
+            role: role || "user" // Use provided role or default to "user"
         });
 
         // saving the user to the database

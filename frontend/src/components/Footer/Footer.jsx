@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <hr />
         <p className="footer-copyright">
-            copyright &copy; 2023 @abc.com Food Delivery. All rights reserved.
+            copyright &copy; 2025 @abc.com Food Delivery. All rights reserved.
         </p>
       
     </div>
