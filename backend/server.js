@@ -1,42 +1,45 @@
-import express from "express"
-import cors from "cors"
-import { connectDB } from "./config/db.js"
-import foodRouter from "./routes/foodRoute.js"
-import userRouter from "./routes/userRoute.js"
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
-import 'dotenv/config.js'
+import express from 'express';
+import cors from 'cors';
+import { connectDB } from './config/db.js';
+import foodRouter from './routes/foodRoute.js';
+import userRouter from './routes/userRoute.js'; 
+import cartRouter from './routes/cartRoute.js';
+import orderRouter from './routes/orderRoute.js'; 
+import 'dotenv/config'; 
 
-const frontendURL = "https://food-delivery-app-frontend-196z.onrender.com";
-const adminURL = "https://food-delivery-app-admin-tar4.onrender.com";
 
-const corsOptions = {
-  origin: [frontendURL, adminURL, "http://localhost:5173", "http://localhost:5174"]
-};
-
-// app config — ensure app is initialized before using it
+//app config
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = 4000;
 
-// middleware
+//middleware
+app.use(cors());
 app.use(express.json());
-app.use(cors(corsOptions));
 
-// DB config
+// database connection
 connectDB();
 
-// api endpoints
-app.use("/api/food", foodRouter);
-app.use("/images", express.static(uploadsDir));
-app.use("/api/user", userRouter);
-app.use("/api/cart", cartRouter);
-app.use("/api/order", orderRouter);
+//api endpoints
+app.use('/api/food', foodRouter);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+//to show the image in frontend using link 
+// we have mounted the uploads folder to the /images endpoint
+app.use('/images', express.static('uploads'));
+
+app.use('/api/user', userRouter); 
+
+app.use('/api/cart', cartRouter);
+
+app.use('/api/order', orderRouter); 
+
+// get method used to fetch data from the server side and send it to the front end as a response.
+app.get('/', (req, res) => {
+  res.send('API Working');
 });
 
-// listen
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// listen method used to start the server and listen for incoming requests on the specified port.
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// mongodb+srv://hirendrakurche423:1234567809@cluster0.zhivqp3.mongodb.net/?
