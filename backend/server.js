@@ -6,33 +6,46 @@ import userRouter from "./routes/userRoute.js"
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 import 'dotenv/config.js'
+import path from "path"
+import fs from "fs"
 
+// ...existing code...
 
+const frontendURL = "https://food-delivery-app-frontend-196z.onrender.com";
+const adminURL = "https://food-delivery-app-admin-tar4.onrender.com";
 
-//app config
-const app = express()
-const port = process.env.port || 4000;
+const corsOptions = {
+  origin: [frontendURL, adminURL, "http://localhost:5173", "http://localhost:5174"]
+};
 
-//middleware
-app.use(express.json())
-app.use(cors())
+// app config — ensure app is initialized before using it
+const app = express();
+const port = process.env.PORT || 4000;
 
-//DB config
+// ensure uploads dir exists
+const uploadsDir = path.join(process.cwd(), "backend", "uploads");
+if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+
+// middleware
+app.use(express.json());
+app.use(cors(corsOptions));
+
+// DB config
 connectDB();
 
-//api endpoints
-app.use("/api/food", foodRouter)
-app.use("/images", express.static("uploads"))
-app.use("/api/user", userRouter)
-app.use("/api/cart", cartRouter)
-app.use("/api/order", orderRouter)
-
+// api endpoints
+app.use("/api/food", foodRouter);
+app.use("/images", express.static(uploadsDir));
+app.use("/api/user", userRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
-    res.send("Hello World!")
-})
+  res.send("Hello World!");
+});
 
-//listen
+// listen
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`)
-})
+  console.log(`Server is running on http://localhost:${port}`);
+});
+// ...existing code...
