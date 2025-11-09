@@ -6,10 +6,6 @@ import userRouter from "./routes/userRoute.js"
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 import 'dotenv/config.js'
-import path from "path"
-import fs from "fs"
-
-// ...existing code...
 
 const frontendURL = "https://food-delivery-app-frontend-196z.onrender.com";
 const adminURL = "https://food-delivery-app-admin-tar4.onrender.com";
@@ -21,10 +17,6 @@ const corsOptions = {
 // app config — ensure app is initialized before using it
 const app = express();
 const port = process.env.PORT || 4000;
-
-// ensure uploads dir exists
-const uploadsDir = path.join(process.cwd(), "backend", "uploads");
-if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 
 // middleware
 app.use(express.json());
@@ -48,4 +40,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-// ...existing code...
